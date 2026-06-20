@@ -25,6 +25,15 @@
     --amber:#F5A93F;
     --amber-dim:#6B4A14;
     --red:#FF6B6B;
+    --c1:#34E0A1;
+    --c2:#38BDF8;
+    --c3:#A78BFA;
+    --c4:#FBBF24;
+    --c5:#FB7185;
+    --c6:#F87171;
+    --c7:#2DD4BF;
+    --c8:#818CF8;
+    --c9:#A3E635;
     --display:'Space Grotesk', sans-serif;
     --body:'Inter', sans-serif;
     --mono:'IBM Plex Mono', monospace;
@@ -178,9 +187,38 @@
   .panel.active{display:block; animation:fadein .25s ease;}
   @keyframes fadein{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
 
+  /* On mobile: drop the tab switcher entirely. Show every category, one
+     after another, so scrolling down reveals everything in sequence. */
+  @media (max-width:880px){
+    .cat-list{display:none;}
+    .panel{
+      display:block !important; animation:none !important;
+      padding-top:24px; margin-bottom:32px; border-top:3px solid var(--line);
+    }
+    .panel:first-of-type{padding-top:0; border-top:none;}
+    .panels .panel:nth-of-type(1){border-top-color:var(--c1);}
+    .panels .panel:nth-of-type(2){border-top-color:var(--c2);}
+    .panels .panel:nth-of-type(3){border-top-color:var(--c3);}
+    .panels .panel:nth-of-type(4){border-top-color:var(--c4);}
+    .panels .panel:nth-of-type(5){border-top-color:var(--c5);}
+    .panels .panel:nth-of-type(6){border-top-color:var(--c6);}
+    .panels .panel:nth-of-type(7){border-top-color:var(--c7);}
+    .panels .panel:nth-of-type(8){border-top-color:var(--c8);}
+    .panels .panel:nth-of-type(9){border-top-color:var(--c9);}
+  }
+
   .panel-head{margin-bottom:22px;}
-  .panel-head h3{font-size:1.4rem; color:var(--text);}
+  .panel-head h3{font-size:1.4rem; font-weight:700; color:var(--text);}
   .panel-head p{color:var(--muted); margin-top:8px;}
+  .panel-head h3.c1{color:var(--c1);}
+  .panel-head h3.c2{color:var(--c2);}
+  .panel-head h3.c3{color:var(--c3);}
+  .panel-head h3.c4{color:var(--c4);}
+  .panel-head h3.c5{color:var(--c5);}
+  .panel-head h3.c6{color:var(--c6);}
+  .panel-head h3.c7{color:var(--c7);}
+  .panel-head h3.c8{color:var(--c8);}
+  .panel-head h3.c9{color:var(--c9);}
 
   .subgrid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px;}
   @media (max-width:680px){ .subgrid{grid-template-columns:1fr;} }
@@ -398,7 +436,7 @@
           <!-- 01 Network -->
           <div class="panel active" id="p1">
             <div class="panel-head">
-              <h3>Network Infrastructure AMC</h3>
+              <h3 class="c1">Network Infrastructure AMC</h3>
               <p>Firewall, switching and wireless — kept patched, monitored and tuned across Sophos and Quantum Rudder hardware.</p>
             </div>
             <div class="subgrid">
@@ -420,7 +458,7 @@
           <!-- 02 Server & Storage -->
           <div class="panel" id="p2">
             <div class="panel-head">
-              <h3>Server &amp; Storage AMC</h3>
+              <h3 class="c2">Server &amp; Storage AMC</h3>
               <p>NAS health, RAID integrity and ransomware-aware snapshot hygiene on Synology and Netgear storage.</p>
             </div>
             <div class="subgrid">
@@ -442,7 +480,7 @@
           <!-- 03 Backup & DR -->
           <div class="panel" id="p3">
             <div class="panel-head">
-              <h3>Backup &amp; Disaster Recovery AMC</h3>
+              <h3 class="c3">Backup &amp; Disaster Recovery AMC</h3>
               <p>Backups that are actually verified — plus a documented, rehearsed recovery plan.</p>
             </div>
             <div class="tag-row">
@@ -464,7 +502,7 @@
           <!-- 04 Google Workspace -->
           <div class="panel" id="p4">
             <div class="panel-head">
-              <h3>Google Workspace AMC</h3>
+              <h3 class="c4">Google Workspace AMC</h3>
               <p>Mailbox administration, email authentication hygiene, and account security for your Workspace tenant.</p>
             </div>
             <div class="subgrid">
@@ -482,7 +520,7 @@
           <!-- 05 Website -->
           <div class="panel" id="p5">
             <div class="panel-head">
-              <h3>Website AMC</h3>
+              <h3 class="c5">Website AMC</h3>
               <p>Keeping the site up, patched and fast — with optional visibility into search performance.</p>
             </div>
             <div class="subgrid">
@@ -500,7 +538,7 @@
           <!-- 06 Cyber Security -->
           <div class="panel" id="p6">
             <div class="panel-head">
-              <h3>Cyber Security AMC</h3>
+              <h3 class="c6">Cyber Security AMC</h3>
               <p>Recurring audits plus an annual round of independent testing.</p>
             </div>
             <div class="subgrid">
@@ -518,7 +556,7 @@
           <!-- 07 User Support -->
           <div class="panel" id="p7">
             <div class="panel-head">
-              <h3>User Support AMC</h3>
+              <h3 class="c7">User Support AMC</h3>
               <p>A helpdesk with response times you can plan around — not "we'll get to it."</p>
             </div>
             <div class="subgrid" style="margin-bottom:24px;">
@@ -539,7 +577,7 @@
           <!-- 08 Compliance -->
           <div class="panel" id="p8">
             <div class="panel-head">
-              <h3>Compliance Support for CA Firms</h3>
+              <h3 class="c8">Compliance Support for CA Firms</h3>
               <p>Built for accounting and audit practices that need to show how client data is handled, retained and protected.</p>
             </div>
             <div class="subgrid">
@@ -553,7 +591,7 @@
           <!-- 09 Monitoring & Reporting -->
           <div class="panel" id="p9">
             <div class="panel-head">
-              <h3>Monitoring &amp; Reporting</h3>
+              <h3 class="c9">Monitoring &amp; Reporting</h3>
               <p>What you receive, and when — no need to ask for it.</p>
             </div>
             <div class="cadence-grid">
